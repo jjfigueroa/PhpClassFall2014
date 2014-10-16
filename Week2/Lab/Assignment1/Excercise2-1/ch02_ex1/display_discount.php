@@ -18,7 +18,15 @@
     $product_description = $_POST['product_description'];
     $list_price = $_POST['list_price'];
     $discount_percent = $_POST['discount_percent'];
-    
+     
+if(empty($product_description))
+{
+   $errorMsg = 'product description empty';
+}else if (!is_string($product_description) || is_numeric($product_description))
+{
+    $errorMsg = 'incorrect format';
+}
+echo $errorMsg ;
     
     //calculations
     $discount_price = $list_price - $discount;
@@ -30,7 +38,8 @@
     $discount_price_formatted = "$". number_format($discount_price. 2);
     
     
-    empty(is_string($product_description) ===false)
+    
+    
     
     ?>
     
