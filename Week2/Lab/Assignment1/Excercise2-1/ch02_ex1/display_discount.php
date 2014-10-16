@@ -27,13 +27,13 @@ if(empty($product_description))
     $errorMsg = 'incorrect format';
 }
 echo $errorMsg ;
-    if (is_numeric($list_price))
+    if (!is_numeric($list_price))
 {
     $errorMsg = 'incorrect format';
 }
 echo $errorMsg ;
 
-if (is_numeric($discount_price))
+if (!is_numeric($discount_price))
 {
     $errorMsg = 'incorrect format';
 }
