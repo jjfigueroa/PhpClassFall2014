@@ -6,11 +6,12 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
+        <title><?php echo "hello world"; ?></title>
     </head>
     <body>
-        <div>TODO write content</div>
+        <?php echo "<h1>hello world</h1>";
+        // put your code here
+        ?>
     </body>
 </html>

@@ -18,46 +18,19 @@
     $product_description = $_POST['product_description'];
     $list_price = $_POST['list_price'];
     $discount_percent = $_POST['discount_percent'];
-    $errorMsg = '';
     
-     //validations
-if(empty($product_description))
-{
-   $errorMsg = 'product description empty';
-}else if (!is_string($product_description) || is_numeric($product_description))
-{
-    $errorMsg = 'incorrect format';
-}
-echo $errorMsg ;
     
-if (!is_numeric($list_price))
-{
-    $errorMsg = 'incorrect format';
-}
-echo $errorMsg ;
-
-if (!is_numeric($discount_price))
-{
-    $errorMsg = 'incorrect format';
-}
-echo $errorMsg ;
-
-
-
     //calculations
-    $discount = $list_price * ($discount_percent * .01);    
     $discount_price = $list_price - $discount;
-//    echo "List Price: {$list_price} and Discount {$discount}";
-        
+    $dicount = $list_price * $discount_percent * .01;
     //applying currency
-    $list_price_formatted = "$".  number_format($list_price,2);
+    $list_price_formatted = "$".  number_format($list_price. 2);
     $discount_percent_formatted = $discount_percent."%";
-    $discount_formatted = "$". number_format($discount,2);
-    $discount_price_formatted = "$". number_format($discount_price,2);
+    $discount_formatted = "$". number_format($discount. 2);
+    $discount_price_formatted = "$". number_format($discount_price. 2);
     
     
-    
-    
+    //empty(is_string($product_description) ===false)
     
     ?>
     

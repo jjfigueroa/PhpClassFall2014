@@ -10,26 +10,22 @@
     <div id="content">
     <h1>Future Value Calculator</h1>
     <?php if (!empty($error_message)) { ?>
-        <?php echo'<div class="error">'. $error_message. '</div>'; ?>
-    <?php  }// end if 
-    $investment = rand(0, rand());
-    $interest_rate = rand(0, 15);
-    $years = rand(2,49);
-    ?>
+        <p class="error"><?php echo $error_message; ?></p>
+    <?php } // end if ?>
     <form action="display_results.php" method="post">
 
         <div id="data">
             <label>Investment Amount:</label>
             <input type="text" name="investment"
-                   placeholder="<?php echo $investment; ?>"/><br />
+                   value="<?php echo $investment; ?>"/><br />
 
             <label>Yearly Interest Rate:</label>
             <input type="text" name="interest_rate"
-                   placeholder="<?php echo $interest_rate; ?>"/><br />
+                   value="<?php echo $interest_rate; ?>"/><br />
 
             <label>Number of Years:</label>
             <input type="text" name="years"
-                   placeholder="<?php echo $years; ?>"/><br />
+                   value="<?php echo $years; ?>"/><br />
         </div>
 
         <div id="buttons">

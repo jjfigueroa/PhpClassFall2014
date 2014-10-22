@@ -3,25 +3,24 @@
     $investment = $_POST['investment'];
     $interest_rate = $_POST['interest_rate'];
     $years = $_POST['years'];
-$error_message = '';
+
     // validate investment entry
     if ( empty($investment) ) {
-        $error_message .= '<p>Investment is a required field.</p>'; }
+        $error_message = 'Investment is a required field.'; }
     else if ( !is_numeric($investment) )  {
-        $error_message .= '<p>Investment must be a valid number.</p>'; }
+        $error_message = 'Investment must be a valid number.'; }
     else if ( $investment <= 0 ) {
-        $error_message .= '<p>Investment must be greater than zero.</p>'; }
+        $error_message = 'Investment must be greater than zero.'; }
 
     // validate interest rate entry
-         if ( empty($interest_rate) ) {
-        $error_message .= '<p>Interest rate is a required field.</p>'; }
+    else if ( empty($interest_rate) ) {
+        $error_message = 'Interest rate is a required field.'; }
     else if ( !is_numeric($interest_rate) )  {
-        $error_message .= '<p>Interest rate must be a valid number.</p>'; }
+        $error_message = 'Interest rate must be a valid number.'; }
     else if ( $interest_rate <= 0 || $interest_rate >= 15 ) {
-        $error_message .= '<p>Interest rate must be greater than zero and  less than or equal to 15.</p>'; }
-        // validate years
+        $error_message = 'Interest rate must be greater than zero and  less than or equal to 15.'; }
 if ( $years < 1 || $years >= 50  ) {
-        $error_message .= '<p>years must be greater than 0 or less than or equal 50.</p>'; }
+        $error_message = 'years must be greater than 0 or less than or equal 50.'; }
     // set error message to empty string if no invalid entries
     else {
         $error_message = ''; }
@@ -71,9 +70,7 @@ if ( $years < 1 || $years >= 50  ) {
     </div>
     
   <?php
-  date_default_timezone_set('America/New_York');
-    echo "Today is" . date('m/d/y H:i:s') . "<br>";
+    echo "Today is" . date('m/d/y') . "<br>";
     ?>
-    <a href="index.php"> Start Over</a>
 </body>
 </html>
